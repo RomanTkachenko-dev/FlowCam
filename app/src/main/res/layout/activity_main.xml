@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="match_parent" android:layout_height="match_parent"
+ android:orientation="horizontal" android:background="#09121D">
+ <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+  android:layout_height="match_parent" android:orientation="vertical">
+  <TextView android:id="@+id/status_text" android:layout_width="match_parent"
+   android:layout_height="wrap_content" android:padding="10dp" android:text="Відкриваємо камеру…"
+   android:textColor="#E8F5EF" android:textSize="15sp" android:background="#152B30" />
+  <org.sappari.air_visualizer.FlowCanvasView android:id="@+id/flow_view"
+   android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+   android:contentDescription="Камера з картою оптичних змін; область обирається перетягуванням" />
+  <TextView android:id="@+id/frame_info" android:layout_width="match_parent"
+   android:layout_height="wrap_content" android:textColor="#B1C2D4" android:textSize="11sp" android:padding="8dp" />
+ </LinearLayout>
+ <ScrollView android:layout_width="280dp" android:layout_height="match_parent"
+  android:background="#122031" android:fillViewport="true">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+   android:orientation="vertical" android:padding="12dp">
+   <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="FlowCam · 0.3" android:textColor="#FFFFFF" android:textSize="20sp" android:textStyle="bold" />
+   <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Оптичні зміни повітря та фону" android:textColor="#AFC5D5" android:textSize="12sp" />
+   <Spinner android:id="@+id/mode_spinner" android:layout_width="match_parent"
+    android:layout_height="48dp" android:contentDescription="Метод аналізу" />
+   <Button android:id="@+id/button_start" android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:text="Калібрувати"
+    android:textColor="#0B2521" android:backgroundTint="#75DDC0" />
+   <Button android:id="@+id/button_stop" android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:text="Зупинити" android:enabled="false"
+    android:textColor="#FFFFFF" android:backgroundTint="#2B4960" />
+   <TextView android:id="@+id/gain_label" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Підсилення ×8" android:textColor="#FFFFFF" />
+   <SeekBar android:id="@+id/gain_slider" android:layout_width="match_parent" android:layout_height="40dp"
+    android:max="59" android:progress="7" android:contentDescription="Візуальне підсилення"
+    android:progressTint="#75DDC0" android:thumbTint="#75DDC0" />
+   <TextView android:id="@+id/threshold_label" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Поріг шуму 2.0 σ" android:textColor="#FFFFFF" />
+   <SeekBar android:id="@+id/threshold_slider" android:layout_width="match_parent" android:layout_height="40dp"
+    android:max="50" android:progress="20" android:contentDescription="Поріг відносно виміряного шуму"
+    android:progressTint="#75DDC0" android:thumbTint="#75DDC0" />
+   <TextView android:id="@+id/lag_label" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Часове порівняння: 100 мс" android:textColor="#FFFFFF" />
+   <SeekBar android:id="@+id/lag_slider" android:layout_width="match_parent" android:layout_height="40dp"
+    android:max="24" android:progress="4" android:contentDescription="Мінімальний інтервал часових порівнянь"
+    android:progressTint="#75DDC0" android:thumbTint="#75DDC0" />
+   <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Непрозорість накладання" android:textColor="#FFFFFF" />
+   <SeekBar android:id="@+id/opacity_slider" android:layout_width="match_parent" android:layout_height="40dp"
+    android:max="100" android:progress="80" android:contentDescription="Непрозорість карти"
+    android:progressTint="#75DDC0" android:thumbTint="#75DDC0" />
+   <CheckBox android:id="@+id/check_raw" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Без накладання" android:textColor="#FFFFFF" android:buttonTint="#75DDC0" />
+   <CheckBox android:id="@+id/check_stabilize" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Компенсувати рух камери" android:checked="true" android:textColor="#FFFFFF" android:buttonTint="#75DDC0" />
+   <CheckBox android:id="@+id/check_denoise" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Помірне згладжування" android:checked="true" android:textColor="#FFFFFF" android:buttonTint="#75DDC0" />
+   <CheckBox android:id="@+id/check_roi" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Вибрати область пальцем" android:textColor="#FFFFFF" android:buttonTint="#75DDC0" />
+   <Button android:id="@+id/button_camera" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Камера та фокус" android:textColor="#FFFFFF" android:backgroundTint="#2B4960" />
+   <Button android:id="@+id/button_record" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Запис досліду · до 10 с" android:enabled="false" android:textColor="#FFFFFF" android:backgroundTint="#2B4960" />
+   <Button android:id="@+id/button_replay" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Повторити останній" android:enabled="false" android:textColor="#FFFFFF" android:backgroundTint="#2B4960" />
+   <Button android:id="@+id/button_save" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Зберегти дані .air" android:enabled="false" android:textColor="#FFFFFF" android:backgroundTint="#2B4960" />
+   <Button android:id="@+id/button_open" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Відкрити дослід .air" android:textColor="#FFFFFF" android:backgroundTint="#2B4960" />
+   <Button android:id="@+id/button_export" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Експорт відео MP4" android:enabled="false" android:textColor="#FFFFFF" android:backgroundTint="#2B4960" />
+   <Button android:id="@+id/button_diagnostics" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Діагностика та інструкція" android:textColor="#FFFFFF" android:backgroundTint="#2B4960" />
+   <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Карта показує оптичні зміни. Стрілки — деформація зображення в px, не швидкість повітря."
+    android:textColor="#B1C2D4" android:textSize="12sp" android:paddingTop="10dp" />
+  </LinearLayout>
+ </ScrollView>
+</LinearLayout>

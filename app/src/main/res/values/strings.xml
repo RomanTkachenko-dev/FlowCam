@@ -1,0 +1,18 @@
+<resources>
+ <string name="app_name">FlowCam</string>
+ <string name="laminar_flow">Еталон (Laminar)</string>
+ <string name="turbulent_flow">Сусідні кадри (Turbulent)</string>
+ <string name="start">СТАРТ</string>
+ <string name="stop">СТОП</string>
+ <string name="reset">Новий еталон</string>
+ <string name="status_initial">Завантаження камери…</string>
+ <string name="camera_image">Зображення камери або різниця кадрів</string>
+ <string name="no_markers">Без маркерів: лише нерухома камера</string>
+ <string name="denoise">Пом’якшити дрібний шум (3×3)</string>
+ <string name="resolution">Роздільність аналізу</string>
+ <string name="gain">Підсилення різниці яскравості</string>
+ <string name="gain_initial">Підсилення ×6</string>
+ <string name="raw_preview">Показати звичайний кадр</string>
+ <string name="diagnostics">Діагностика</string>
+ <string name="measurement_note">Телефон і фон мають бути нерухомі. СТАРТ — при вимкненому фені. Маркери визначають область один раз. Світлі ділянки показують різницю кадрів, а не швидкість повітря.</string>
+</resources>
